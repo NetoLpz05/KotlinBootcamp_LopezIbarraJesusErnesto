@@ -2,14 +2,14 @@ package Spices
 
 class Curry(
     spiciness: String,
-    color: SpiceColor = YellowSpiceColor
-) : Spice("Curry", spiciness, color), Grinder {
+    spiceColor: SpiceColor = YellowSpiceColor
+) : Spice("Curry", spiciness, spiceColor), Grinder {
 
     override fun prepareSpice() {
         grind()
     }
 
     override fun grind() {
-        println("Moliendo el curry en polvo")
+        println("Moliendo curry")
     }
 }

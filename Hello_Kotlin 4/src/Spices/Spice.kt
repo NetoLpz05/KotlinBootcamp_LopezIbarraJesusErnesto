@@ -1,10 +1,10 @@
 package Spices
 
-abstract class Spice(
+sealed class Spice(
     val name: String,
     val spiciness: String = "mild",
-    color: SpiceColor
-) : SpiceColor by color {
+    spiceColor: SpiceColor
+) : SpiceColor by spiceColor {
 
     val heat: Int
         get() = when (spiciness.lowercase()) {

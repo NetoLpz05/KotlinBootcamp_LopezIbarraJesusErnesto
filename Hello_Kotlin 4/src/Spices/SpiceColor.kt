@@ -1,11 +1,11 @@
 package Spices
 
 interface SpiceColor {
-    val color: String
+    val color: Color
 }
 
 object YellowSpiceColor : SpiceColor {
-    override val color = "yellow"
+    override val color = Color.YELLOW
 }
 
 interface Grinder {
