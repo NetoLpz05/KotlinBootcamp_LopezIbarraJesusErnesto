@@ -27,4 +27,18 @@ class Game {
         path.clear()
         false
     }
+
+    fun move(where: () -> Boolean): Boolean {
+        return where()
+    }
+
+    fun makeMove(command: String?) {
+        when (command) {
+            "w" -> move(north)
+            "s" -> move(south)
+            "a" -> move(east)
+            "d" -> move(west)
+            else -> move(end)
+        }
+    }
 }

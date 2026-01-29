@@ -1,35 +1,23 @@
 package Aquarium2
 
-data class Fish(var name: String)
-
-fun main() {
+fun main(args: Array<String>) {
     fishExamples()
 }
+
+data class Fish(val name: String)
 
 fun fishExamples() {
     val fish = Fish("splashy")
 
-    myWith(fish.name) {
-        println(replaceFirstChar { it.uppercase() })
-    }
+    myWith(fish.name, object : Function1<String, Unit> {
+        override fun invoke(name: String) {
+            name.capitalize()
+        }
+    })
 
-    println(fish.run { name })
-
-    println(fish.apply { })
-
-    val fish2 = Fish("splashy2").apply {
-        name = "Sharky"
-    }
-    println(fish2)
-
-    val result = fish.let { it.name.replaceFirstChar { c -> c.uppercase() } }
-        .let { it + " fish" }
-        .let { it + it.length }
-        .let { it + 31 }
-
-    println(result)
+    fish.name.capitalize()
 }
 
-fun myWith(name: String, block: String.() -> Unit) {
+inline fun myWith(name: String, block: String.() -> Unit) {
     name.block()
 }

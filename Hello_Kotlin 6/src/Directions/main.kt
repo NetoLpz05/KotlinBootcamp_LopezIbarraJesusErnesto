@@ -1,16 +1,11 @@
 package Directions
 
-fun main(){
+fun main() {
     val game = Game()
 
-    println(game.path)
-
-    game.north()
-    game.south()
-    game.east()
-    game.west()
-
-    game.end()
-
-    println(game.path)
+    while (true) {
+        print("Enter a direction: n/s/e/w: ")
+        val input = readLine()
+        game.makeMove(input)
+    }
 }
