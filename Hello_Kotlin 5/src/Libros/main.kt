@@ -1,14 +1,6 @@
 package Libros
 
 fun main() {
-
-    //val book = Book("Cien años de soledad", "Gabriel García Márquez", 1967)
-
-    //val (title, author) = book.getTitleAuthor()
-    //val (t, a, y) = book.getTitleAuthorYear()
-
-    //rintln("Aquí está tu libro \"$t\" escrito por $a en $y.")
-
     val allBooks = setOf(
         "Hamlet",
         "Macbeth",
@@ -38,10 +30,21 @@ fun main() {
     println("Contenido final de moreBooks:")
     println(moreBooks)
 
-    val book = Book("Kotlin in Action", "Dmitry Jemerov")
+    //val book = Book("Kotlin in Action", "Dmitry Jemerov")
 
-    val borrowedBooks = 3
-    println("¿Puede pedir otro libro? ${book.canBorrow(borrowedBooks)}")
+//    val borrowedBooks = 3
+//    println("¿Puede pedir otro libro? ${book.canBorrow(borrowedBooks)}")
+//
+//    book.printUrl()
 
-    book.printUrl()
+    val book = Book(100)
+    val puppy = Puppy()
+
+    while (book.pages > 0) {
+        puppy.playWithBook(book)
+        println("Pages left: ${book.pages}")
+        println("Book weight: ${book.weight()} grams\n")
+    }
+
+    println("The book has no pages left :(")
 }
